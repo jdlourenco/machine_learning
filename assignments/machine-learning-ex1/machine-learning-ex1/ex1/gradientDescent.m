@@ -18,13 +18,8 @@ for iter = 1:num_iters
     %
 
     h_theta = (X * theta);
-
-    d_theta = zeros(2,1);
-    d_theta(1) = (1/m) * X(:,1)' * (h_theta - y);
-    d_theta(2) = (1/m) * X(:,2)' * (h_theta - y);
-
+    d_theta = (1/m) * X' * (h_theta - y);
     theta   = theta - alpha * d_theta;
-
 
     % ============================================================
 
