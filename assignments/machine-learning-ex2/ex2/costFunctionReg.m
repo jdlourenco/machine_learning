@@ -23,13 +23,7 @@ htheta = sigmoid(X * theta);
 J = sum(log(htheta)' * (-y) - (log(1-htheta)' * (1 - y))) / m + (sum(theta(2:end,:) .^2) * (lambda/(2*m)));
 
 grad = (X' * (htheta - y)) / m;
-
-grad(2:end) = grad(2:end) + (lambda/m) * grad(2:end);
-%grad= ((X' * (htheta - y)) / m) + (lambda/m) * grad;
-
-%grad(1) = ((X' * (htheta - y)) / m)(1);
-
-
+grad(2:end) = grad(2:end) + (lambda/m) * theta(2:end);
 
 % =============================================================
 
