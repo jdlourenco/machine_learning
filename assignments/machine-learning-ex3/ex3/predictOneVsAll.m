@@ -30,11 +30,13 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+%halltheta will have m rows
+halltheta = X * all_theta';
 
+%the indice with the highest value will correspond to the predicted class
+[_ indices] = max(halltheta');
 
-
-
-
+p = indices';
 
 % =========================================================================
 
