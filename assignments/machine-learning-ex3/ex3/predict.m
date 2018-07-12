@@ -24,10 +24,10 @@ X = [ones(m,1) X];
 %
 
 
-a1 = X * Theta1';
+a1 = sigmoid(X * Theta1');
 a1 = [ones(size(a1,1), 1) a1];
 
-htheta = a1 * Theta2';
+htheta = sigmoid(a1 * Theta2');
 
 [_ indices] = max(htheta');
 
