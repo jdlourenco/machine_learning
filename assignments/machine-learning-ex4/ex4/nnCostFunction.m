@@ -69,10 +69,9 @@ z2 = a1 * Theta1';
 a2 = [ones(size(z2, 1), 1), sigmoid(z2)];
 
 z3 = a2 * Theta2';
-%a2 = [ones(size(z3, 1), 1), sigmoid(z3)];
-a2 = sigmoid(z3);
+a3 = sigmoid(z3);
 
-htheta = a2;
+htheta = a3;
 
 
 for i = 1:m
