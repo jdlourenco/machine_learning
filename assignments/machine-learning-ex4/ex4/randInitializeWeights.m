@@ -20,10 +20,9 @@ W = zeros(L_out, 1 + L_in);
 %
 
 
+epson = sqrt(6) / sqrt(L_in+L_out);
 
-
-
-
+rand(size(W)) * (2*epson) - epson;
 
 
 
