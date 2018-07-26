@@ -80,21 +80,25 @@ for i = 1:m
 	end
 end
 
-
 J = J/m;
 
 regularization = (sum(sum(Theta1(:,2:end) .^ 2)) + sum(sum(Theta2(:,2:end) .^ 2))) * lambda / (2 * m);
-%regularization = sum(nn_params .^2) * lambda / (2 * m);
-
 J += regularization;
 
 
-% -------------------------------------------------------------
+ymatrix = zeros(size(y,1), num_labels);
 
-% =========================================================================
+for i=1:m
+	ymatrix(i, y(i)) = 1;
+end
 
-% Unroll gradients
+delta3 = htheta - ymatrix;
+
+delta2 = delta3 * Theta2(:,2:end) .* sigmoidGradient(z2);
+
+Theta2_grad = delta3' * a2 / m;
+Theta1_grad = delta2' * a1 / m;
+
 grad = [Theta1_grad(:) ; Theta2_grad(:)];
-
 
 end
