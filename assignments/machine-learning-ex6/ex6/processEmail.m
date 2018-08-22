@@ -97,11 +97,11 @@ while ~isempty(email_contents)
     %       str2). It will return 1 only if the two strings are equivalent.
     %
 
+    word_index = find(ismember(vocabList, str));
 
-
-
-
-
+    if ! isempty(word_index)
+        word_indices = [ word_indices; word_index];
+    end
 
 
 
